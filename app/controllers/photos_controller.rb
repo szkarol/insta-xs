@@ -14,7 +14,7 @@ class PhotosController < ApplicationController
     respond_to do |format|
       if @photo.save
         VisionFetcherJob.perform_now(@photo.id)
-        format.json { render json: @photo, status: :created }
+        format.json { render @photo, status: :created }
       else
         format.json { render json: @photo.errors, status: :unprocessable_entity }
       end

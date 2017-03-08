@@ -1,0 +1,53 @@
+.navbar-default
+  background-color: white
+
+  .navbar-brand
+    padding-top: 28px
+    color:       black
+    font-size:   2.4em
+
+    &:before
+      font-family:    FontAwesome
+      content:        "\f16d"
+      margin-right:   15px
+      display:        inline-block
+      vertical-align: bottom
+
+.navbar-static-top .container
+  height: 77px
+
+.jumbotron
+  background-color: $main-bg-gray
+
+  &#photos-list
+    padding: 0
+
+.photo-container
+  margin-bottom: 28px
+
+  i.delete-photo
+    color: indianred
+    font-size: xx-large
+    position: absolute
+    right: 0
+    padding-right: 10px
+    display: none
+
+  &:hover i.delete-photo
+    display: block
+    z-index: 1
+
+  &:hover img.photo_img
+    -webkit-filter: brightness(70%)
+    filter: brightness(70%)
+
+.dropzone
+  border-style: dashed
+  border-radius: 10px
+
+.dropzone-loader
+  display: none
+  background-image: url('dude.gif')
+  background-size: contain
+  height: 140px
+  width: 100%

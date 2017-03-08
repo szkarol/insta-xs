@@ -1,0 +1,6 @@
+.col-sm-5.col-md-4.photo-container data-photo-id=photo.id
+  = link_to photo_path(photo), method: :delete, remote: :true do
+    i.fa.fa-times.delete-photo aria-hidden="true"
+    
+  = link_to photo_url(photo), class: "photo_link"  do
+    = image_tag photo.image.small.url, class: "photo_img"

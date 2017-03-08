@@ -1,0 +1,13 @@
+- photo_presenter = PhotoPresenter.new(@photo)
+.container.photo-show
+  - if photo_presenter.show_faces?
+    = render partial: 'faces', locals: { annotation: photo_presenter.annotation }
+  = image_tag photo_presenter.image.big.url
+
+  .header
+    .destroy_button= link_to 'Destroy', @photo, method: :delete, class: "btn btn-primary"
+
+  .content    
+    .created_at= time_ago_in_words(photo_presenter.created_at)
+    .tags= photo_presenter.labels_to_str
+    

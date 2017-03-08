@@ -1,0 +1,6 @@
+.jumbotron.photo-form
+  = form_for(@new_photo, html: { multipart: true, class: "dropzone"}) do |f| 
+    .dropzone-loader
+    .fallback
+      = f.file_field :image 
+      = f.submit "Upload" 

@@ -1,0 +1,3 @@
+#photos-list.jumbotron.row
+  - @photos.each do |photo|
+    = render partial: "photo_element", locals: { photo: photo }

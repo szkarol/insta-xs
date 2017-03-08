@@ -1,0 +1,56 @@
+.container.photo-show
+  border: 1px solid $insta-gray
+  border-radius: 3px
+  padding: 0
+  background-color: white
+  box-sizing: border-box
+  display: flex
+  position: relative
+
+  &.img
+    padding-right: 330px
+
+  .header
+    border-bottom: 1px solid $insta-gray
+    position: absolute
+    top: 0
+    right: 28px
+    width: 30%
+
+    .destroy_button
+      margin: 20px
+      float: right
+
+  .content
+    top: 78px
+    position: absolute
+    box-sizing: border-box
+    right: 0
+    width: 330px
+    padding: 20px 0
+
+    .created_at
+      width: 100%
+      padding-left: 65%
+      padding-bottom: 20px
+
+    .tags
+      padding-left: 7%
+      padding-right: 7%
+
+.svg-container
+  position: absolute
+  width: 600px
+  height: 600px
+  pointer-events: all
+
+  polyline.face
+    pointer-events: all
+    fill: none
+    stroke: $btn-primary-bg
+    stroke-width: 3px
+    stroke-linejoin: round
+    stroke-opacity: 0
+
+    &:hover
+      stroke-opacity: 1

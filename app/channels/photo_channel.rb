@@ -24,6 +24,7 @@ class PhotoChannel < ApplicationCable::Channel
   private
 
   def render_photo(photo)
-    ApplicationController.render(partial: 'photos/photo_element', locals: { photo: Photo.find(photo["id"]) })
+    ApplicationController.renderer.new(http_host: Figaro.env.default_host, https: true)
+      .render(partial: 'photos/photo_element', locals: { photo: Photo.find(photo["id"]) })
   end
 end

@@ -40,10 +40,7 @@ describe PhotoPresenter do
   end
 
   it 'returns amazone search url' do
-    logo = "Reebok"
-    @photo.annotation.logos = [logo]
-
-    expect(@photo_presenter.amazone_search_url(logo)).to eq('https://www.amazon.com/s?field-keywords=Reebok')
+    expect(@photo_presenter.amazone_search_url("Reebok")).to eq('https://www.amazon.com/s?field-keywords=Reebok')
   end
 
   it 'returns google maps url' do

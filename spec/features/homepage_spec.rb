@@ -12,10 +12,9 @@ describe 'homepage' do
     end
   end
 
-  it 'contains dropzone element', js: true do
+  it 'contains dropzone element' do
     within('div.jumbotron.photo-form') do
       expect(page).to have_css     '.dropzone'
-      expect(page).to have_content 'Drop files'
       expect(page).to have_css     'form#new_photo'
     end
   end

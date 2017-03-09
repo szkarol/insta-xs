@@ -1,3 +1,6 @@
+.navbar-header
+  width: 100%
+
 .navbar-default
   background-color: white
 
@@ -6,12 +9,23 @@
     color:       black
     font-size:   2.4em
 
-    &:before
-      font-family:    FontAwesome
-      content:        "\f16d"
-      margin-right:   15px
-      display:        inline-block
-      vertical-align: bottom
+    &.logo-link
+      &:before
+        font-family:    FontAwesome
+        content:        "\f16d"
+        margin-right:   15px
+        display:        inline-block
+        vertical-align: bottom
+
+    &.repo-link
+      float: right
+
+      &:before
+        font-family:    FontAwesome
+        content:        "\f09b"
+        margin-right:   15px
+        display:        inline-block
+        vertical-align: bottom
 
 .navbar-static-top .container
   height: 77px

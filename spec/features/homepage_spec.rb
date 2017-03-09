@@ -7,7 +7,7 @@ describe 'homepage' do
 
   it 'display logo link' do
     within('div.navbar-header') do
-      expect(page).to have_css     'a.navbar-brand'
+      expect(page).to have_css     'a.navbar-brand.logo-link'
       expect(page).to have_content 'Insta-XS'
     end
   end

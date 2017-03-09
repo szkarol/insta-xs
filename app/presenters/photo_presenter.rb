@@ -9,4 +9,12 @@ class PhotoPresenter < SimpleDelegator
   def show_faces?
     annotation.present? && annotation.faces.present?
   end
+
+  def logos
+    annotation.logos
+  end
+
+  def amazone_search_url(logo)
+    "https://www.amazon.com/s?field-keywords=#{URI.escape(logo)}"
+  end
 end

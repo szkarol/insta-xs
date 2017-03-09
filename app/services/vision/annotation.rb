@@ -8,7 +8,7 @@ module Vision
     end
 
     def call
-      client.annotate image, faces: true, labels: true
+      client.annotate image, faces: true, labels: true, logos: true
     end
 
     def response

@@ -3,7 +3,8 @@ class FakeVision
     def annotation_response
       response_params = {
         faces:  ["476,54 531,54 531,109 476,109 476,54", "235,40 293,40 293,97 235,97 235,40"],
-        labels: ["photography", "monochrome photography"]
+        labels: ["photography", "monochrome photography"],
+        logos:  ["Abibas", "Sofixy"]
       }
 
       Hashie::Mash.new(response_params)
@@ -28,6 +29,16 @@ class FakeVision
               head: [{ x: 219, y: 14 }, { x: 300, y: 14 }, { x: 300, y: 108 }, { x: 219, y: 108 }],
               face: [{ x: 235, y: 40 }, { x: 293, y: 40 }, { x: 293, y: 97 },  { x: 235, y: 97  }]
             }
+          }
+        ],
+        logos: [
+          {
+            description: "Abibas",
+            score: 0.22
+          },
+          {
+            description: "Sofixy",
+            score: 0.25
           }
         ]
       }

@@ -22,6 +22,10 @@ module Vision
       end
     end
 
+    def logos
+      annotation.logos.map(&:description)
+    end
+
     private
 
     def face_bounds

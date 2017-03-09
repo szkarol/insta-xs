@@ -38,4 +38,11 @@ describe PhotoPresenter do
       expect(@photo_presenter).to respond_to(attr)
     end
   end
+
+  it 'returns amazone search url' do
+    logo = "Reebok"
+    @photo.annotation.logos = [logo]
+
+    expect(@photo_presenter.amazone_search_url(logo)).to eq('https://www.amazon.com/s?field-keywords=Reebok')
+  end
 end

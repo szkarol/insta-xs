@@ -7,7 +7,10 @@
   .header
     .destroy_button= link_to 'Destroy', @photo, method: :delete, class: "btn btn-primary"
 
-  .content    
+  .content
     .created_at= time_ago_in_words(photo_presenter.created_at)
     .tags= photo_presenter.labels_to_str
+    .logos
+      - photo_presenter.logos.each do |logo|
+        = link_to logo, photo_presenter.amazone_search_url(logo), target: :_blank, class: 'amazone-link'
     

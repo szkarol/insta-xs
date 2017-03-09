@@ -10,7 +10,7 @@ describe Vision::Fetcher do
   end
 
   it 'updates photo annotation if exists' do
-    annotation = build(:annotation, faces: [], labels: [])
+    annotation = build(:annotation, faces: [], labels: [], logos: [])
     photo      = create(:photo, annotation: annotation)
     fetcher    = Vision::Fetcher.new(photo)
     allow(fetcher).to receive(:response).and_return(FakeVision.annotation_response)
@@ -20,5 +20,6 @@ describe Vision::Fetcher do
 
     expect(annotation.faces).to  eq(FakeVision.annotation_response.faces)
     expect(annotation.labels).to eq(FakeVision.annotation_response.labels)
+    expect(annotation.logos).to  eq(FakeVision.annotation_response.logos)
   end
 end

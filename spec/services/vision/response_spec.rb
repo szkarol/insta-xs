@@ -18,4 +18,14 @@ describe Vision::Response do
 
     expect(@vision_response.faces).to be_empty
   end
+
+  it 'extracts logos' do
+    expect(@vision_response.logos).to eq(["Abibas", "Sofixy"])
+  end
+
+  it 'returns empty array if logos blank' do
+    @vision_response.annotation.logos = []
+
+    expect(@vision_response.logos).to be_empty
+  end
 end

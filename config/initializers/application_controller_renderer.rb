@@ -2,5 +2,5 @@
 
 ApplicationController.renderer.defaults.merge!(
   http_host: Figaro.env.default_host,
-  https: true
+  https: !Rails.env.development?
 )

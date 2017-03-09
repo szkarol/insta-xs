@@ -1,24 +1,22 @@
-# README
+# Welcome to Insta-XS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Instagram eXtraSmall.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+* Ruby on Rails 5
+* PostgreSQL
+* Redis
+* Google Cloud Storage account
+* Google Cloud Vision  account
 
-* System dependencies
+## Install
 
-* Configuration
+* clone repository
+* set env variables (example file config/application.example.yml)
+* bundle install
+* rake db:create
+* rake db:migrate
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Run tests
+* bundle exec rspec

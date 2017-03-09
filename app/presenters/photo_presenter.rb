@@ -17,4 +17,16 @@ class PhotoPresenter < SimpleDelegator
   def amazone_search_url(logo)
     "https://www.amazon.com/s?field-keywords=#{URI.escape(logo)}"
   end
+
+  def landmarks
+    annotation.landmarks.map{ |landmark| google_maps_params(landmark) }
+  end
+
+  def google_maps_params(landmark)
+    description, latitude, longitude = landmark.split(',')
+    {
+      description: description,
+      url: "http://www.google.com/maps/place/#{latitude},#{longitude}"
+    }
+  end
 end

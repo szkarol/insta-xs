@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309085811) do
+ActiveRecord::Schema.define(version: 20170309101050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "annotations", force: :cascade do |t|
-    t.integer "photo_id",              null: false
-    t.text    "labels",   default: [],              array: true
-    t.text    "faces",    default: [],              array: true
-    t.string  "logos",    default: [],              array: true
+    t.integer "photo_id",               null: false
+    t.text    "labels",    default: [],              array: true
+    t.text    "faces",     default: [],              array: true
+    t.string  "logos",     default: [],              array: true
+    t.string  "landmarks", default: [],              array: true
     t.index ["photo_id"], name: "index_annotations_on_photo_id", using: :btree
   end
 

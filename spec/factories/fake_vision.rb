@@ -2,9 +2,10 @@ class FakeVision
   class << self
     def annotation_response
       response_params = {
-        faces:  ["476,54 531,54 531,109 476,109 476,54", "235,40 293,40 293,97 235,97 235,40"],
-        labels: ["photography", "monochrome photography"],
-        logos:  ["Abibas", "Sofixy"]
+        faces:     ["476,54 531,54 531,109 476,109 476,54", "235,40 293,40 293,97 235,97 235,40"],
+        labels:    ["photography", "monochrome photography"],
+        logos:     ["Abibas", "Sofixy"],
+        landmarks: ["Eiffel Tower,48.858461,2.294351"]
       }
 
       Hashie::Mash.new(response_params)
@@ -39,6 +40,17 @@ class FakeVision
           {
             description: "Sofixy",
             score: 0.25
+          }
+        ],
+        landmarks: [
+          {
+            description: "Eiffel Tower",
+            locations: [
+              {
+                latitude:  48.858461,
+                longitude: 2.294351
+              }
+            ]
           }
         ]
       }

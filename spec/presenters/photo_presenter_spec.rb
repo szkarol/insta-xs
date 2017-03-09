@@ -45,4 +45,11 @@ describe PhotoPresenter do
 
     expect(@photo_presenter.amazone_search_url(logo)).to eq('https://www.amazon.com/s?field-keywords=Reebok')
   end
+
+  it 'returns google maps url' do
+    params = @photo_presenter.google_maps_params("Eiffel Tower,48.858461,2.294351")
+
+    expect(params[:description]).to eq('Eiffel Tower')
+    expect(params[:url]).to         eq('http://www.google.com/maps/place/48.858461,2.294351')
+  end
 end

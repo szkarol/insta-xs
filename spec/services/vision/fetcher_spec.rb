@@ -18,8 +18,9 @@ describe Vision::Fetcher do
     fetcher.call
     annotation.reload
 
-    expect(annotation.faces).to  eq(FakeVision.annotation_response.faces)
-    expect(annotation.labels).to eq(FakeVision.annotation_response.labels)
-    expect(annotation.logos).to  eq(FakeVision.annotation_response.logos)
+    expect(annotation.faces).to     eq(FakeVision.annotation_response.faces)
+    expect(annotation.labels).to    eq(FakeVision.annotation_response.labels)
+    expect(annotation.logos).to     eq(FakeVision.annotation_response.logos)
+    expect(annotation.landmarks).to eq(FakeVision.annotation_response.landmarks)
   end
 end

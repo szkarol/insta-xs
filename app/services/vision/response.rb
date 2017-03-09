@@ -26,6 +26,14 @@ module Vision
       annotation.logos.map(&:description)
     end
 
+    def landmarks
+      annotation.landmarks.flat_map do |landmark|
+        landmark.locations.map do |location|
+          "#{landmark.description},#{location.latitude},#{location.longitude}"
+        end
+      end
+    end
+
     private
 
     def face_bounds

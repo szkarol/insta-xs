@@ -28,4 +28,14 @@ describe Vision::Response do
 
     expect(@vision_response.logos).to be_empty
   end
+
+  it 'extracts landmarks' do
+    expect(@vision_response.landmarks).to eq(["Eiffel Tower,48.858461,2.294351"])
+  end
+
+  it 'returns empty array if logos blank' do
+    @vision_response.annotation.landmarks = []
+
+    expect(@vision_response.landmarks).to be_empty
+  end
 end

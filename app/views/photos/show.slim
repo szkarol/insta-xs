@@ -9,8 +9,14 @@
 
   .content
     .created_at= time_ago_in_words(photo_presenter.created_at)
+
     .tags= photo_presenter.labels_to_str
+
     .logos
       - photo_presenter.logos.each do |logo|
         = link_to logo, photo_presenter.amazone_search_url(logo), target: :_blank, class: 'amazone-link'
+
+    .landmarks
+      - photo_presenter.landmarks.each do |landmark|
+        = link_to landmark[:description], landmark[:url], target: :_blank, class: 'google-maps-links'
     

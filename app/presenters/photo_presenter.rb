@@ -11,7 +11,7 @@ class PhotoPresenter < SimpleDelegator
   end
 
   def logos
-    annotation.logos
+    annotation.try(:logos) || []
   end
 
   def amazone_search_url(logo)
@@ -19,7 +19,9 @@ class PhotoPresenter < SimpleDelegator
   end
 
   def landmarks
-    annotation.landmarks.map{ |landmark| google_maps_params(landmark) }
+    if annotation.present?
+      annotation.landmarks.map{ |landmark| google_maps_params(landmark) }
+    end || []
   end
 
   def google_maps_params(landmark)
